@@ -2,31 +2,31 @@ version: 2
 
 models:
   - name: customer
-    description: "A table containing customer information"
+    description: A table containing customer information
     columns:
       - name: id
-        description: "The primary key for this table"
+        description: The primary key for this table
         data_tests:
           - unique
           - not_null
       - name: first_name
-        description: "The customer's first name"
+        description: The customer's first name
         data_tests:
           - not_null
       - name: last_name
-        description: "The customer's last name"
+        description: The customer's last name
         data_tests:
           - not_null
       - name: order_id
-        description: "The ID of the order associated with the customer"
+        description: The ID of the order associated with the customer
       - name: order_date
-        description: "The date of the order associated with the customer"
+        description: The date of the order associated with the customer
       - name: status
-        description: "The status of the order associated with the customer"
+        description: The status of the order associated with the customer
         data_tests:
           - not_null
   - name: stadium_analysis
-    description: "A table containing cleaned stadium data"
+    description: A table containing cleaned stadium data
     columns:
       - name: stadium
         description: Name of the stadium.
