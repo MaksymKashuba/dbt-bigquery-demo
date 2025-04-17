@@ -2,12 +2,11 @@ WITH city_capacity_cte AS (
     SELECT city,
            AVG(capacity) AS avg_capacity
     FROM {{ ref('stadium_cleaned') }}
-    GROUP BY city
     WHERE capacity > 40000
+    GROUP BY city
 ),
 filtered_stadiums_cte AS (
-    SELECT s.id,
-           s.name,
+    SELECT s.name,
            s.city,
            s.capacity,
            s.country
@@ -16,8 +15,7 @@ filtered_stadiums_cte AS (
     ON s.city = c.city
 ),
 stadium_cte AS (
-    SELECT id,
-           name,
+    SELECT name,
            city,
            capacity,
            country,
@@ -26,8 +24,7 @@ stadium_cte AS (
     WHERE capacity > 30000
 ),
 enhanced_stadium_cte AS (
-    SELECT id,
-           name,
+    SELECT name,
            city,
            capacity,
            country,
@@ -36,8 +33,7 @@ enhanced_stadium_cte AS (
     FROM stadium_cte
     WHERE (events_hosted / NULLIF(capacity, 0)) * 100 > 50
 )
-SELECT id,
-       name,
+SELECT name,
        city,
        capacity,
        country,

@@ -22,8 +22,6 @@ models:
   - name: stadium_analysis
     description: "A table containing cleaned stadium data"
     columns:
-      - name: id
-        description: "The unique identifier for the stadium"
       - name: name
         description: "The name of the stadium"
       - name: city
