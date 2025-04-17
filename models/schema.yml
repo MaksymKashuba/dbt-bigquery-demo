@@ -11,24 +11,38 @@ models:
           - not_null
       - name: first_name
         description: "The customer's first name"
+        data_tests:
+          - not_null
       - name: last_name
         description: "The customer's last name"
+        data_tests:
+          - not_null
       - name: order_id
         description: "The ID of the order associated with the customer"
       - name: order_date
         description: "The date of the order associated with the customer"
       - name: status
         description: "The status of the order associated with the customer"
+        data_tests:
+          - not_null
   - name: stadium_analysis
     description: "A table containing cleaned stadium data"
     columns:
-      - name: name
-        description: "The name of the stadium"
+      - name: stadium
+        description: Name of the stadium.
       - name: city
-        description: "The city where the stadium is located"
+        description: City where the stadium is located.
       - name: capacity
-        description: "The seating capacity of the stadium"
+        description: Seating capacity of the stadium.
       - name: country
-        description: "The country where the stadium is located"
-      - name: events_hosted
-        description: "The number of events hosted by the stadium"
+        description: Country where the stadium is located.
+      - name: region
+        description: Region of the country.
+      - name: rank
+        description: Rank or importance of the stadium.
+      - name: images
+        description: Image URLs or references for the stadium.
+      - name: home_team
+        description: Primary team that plays in the stadium.
+      - name: location
+        description: Geographical location or coordinates of the stadium.
