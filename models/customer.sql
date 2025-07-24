@@ -28,5 +28,5 @@ SELECT customer_id,
        order_date,
        status
 FROM customer_orders
-WHERE order_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 20 DAY)
+WHERE order_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 10 DAY)
   AND status = 'completed'
